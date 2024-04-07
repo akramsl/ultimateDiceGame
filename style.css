@@ -1,0 +1,96 @@
+.triangle_1 {
+    width: 0;
+    height: 0;
+    position: relative;
+    border-left: 20vw solid transparent;
+    border-right: 20vw solid transparent;
+    border-bottom: 100vh solid black;
+}
+
+.triangle_2 {
+    width: 0;
+    height: 0;
+    border-left: 20vw solid transparent;
+    border-right: 20vw solid transparent;
+    border-top: 100vh solid black;
+}
+
+.dice {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    border: 2px solid #333;
+    border-radius: 10px;
+}
+
+/* Positionnement du bouton nouvelle partie en dehors du block*/
+.new_game {
+    position: fixed;
+    left: 35%;
+    top: 10%;
+}
+
+.roll_dice {
+    position: fixed;
+    bottom: 30%;
+    left: 48%;
+}
+
+.hold {
+    position: fixed;
+    bottom: 10%;
+    left: 55%;
+}
+
+.total_nb {
+    position: absolute;
+    transform: translate(-45%, 300%);
+}
+
+.total {
+    position: absolute;
+    transform: translate(-45%, 400%);
+}
+
+.current {
+    position: absolute;
+    transform: translate(-45%, 1000%);
+    white-space: nowrap;
+}
+
+.current_nb {
+    position: absolute;
+    transform: translate(-45%, 1100%);
+}
+
+.player_1 {
+    position: absolute;
+    transform: translate(-45%, 1850%);
+    white-space: nowrap;
+}
+.total_nb2 {
+    position: absolute;
+    transform: translate(-50%, -300%);
+}
+
+.total2 {
+    position: absolute;
+    transform: translate(-50%, -400%);
+}
+
+.current2 {
+    position: absolute;
+    transform: translate(-50%, -1000%);
+    white-space: nowrap;
+}
+
+.current_nb2 {
+    position: absolute;
+    transform: translate(-50%, -1100%);
+}
+
+.player_2 {
+    position: absolute;
+    transform: translate(-50%, -1850%);
+    white-space: nowrap;
+}

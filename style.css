@@ -92,3 +92,13 @@
     width: 100px;
     height: 100px;
 }
+
+.player_1_button {
+    background-color: red;
+    color: azure;
+}
+
+.player_2_button {
+    background-color: blue;
+    color: azure;
+}

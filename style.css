@@ -1,10 +1,16 @@
+body {
+    background-image: url(./Dice/ring-boxe-3d\ \(1\).jpg);
+    background-size: cover;
+    background-position: center;
+}
+
 .triangle_1 {
     width: 0;
     height: 0;
     position: relative;
     border-left: 20vw solid transparent;
     border-right: 20vw solid transparent;
-    border-bottom: 100vh solid black;
+    border-bottom: 100vh solid red;
 }
 
 .triangle_2 {
@@ -12,7 +18,7 @@
     height: 0;
     border-left: 20vw solid transparent;
     border-right: 20vw solid transparent;
-    border-top: 100vh solid black;
+    border-top: 100vh solid blue;
 }
 
 
@@ -101,4 +107,20 @@
 .player_2_button {
     background-color: blue;
     color: azure;
+}
+
+
+button {
+    background-color: #341648;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 25px;
+    box-shadow: inset 25px 25px 25px rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
 }

@@ -6,6 +6,13 @@ body, html {
     align-items: center;
 }
 
+body {
+    background-image: url(./Dice/ring-boxe-3d\ \(1\).jpg);
+    background-size: cover;
+    background-position: center;
+}
+
 .winner {
     text-align: center;
+    margin-bottom: 15em;
 }

@@ -29,6 +29,9 @@ var colors = ['#bb0000', '#ffffff'];
 // Récuperer le nom du gagnant
 
 document.addEventListener('DOMContentLoaded', function() {
+    let winnerSound = new Audio("Sound/winner_is.wav");
+    winnerSound.play();
+
     const urlParam = new URLSearchParams(window.location.search);
     const winnerName = urlParam.get('winner');
 

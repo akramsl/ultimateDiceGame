@@ -1,28 +1,27 @@
+/* Ajoutez votre CSS personnalisé ici */
+html {
+    height: 100%;
+}
+
 body {
     background-image: url(./Dice/ring-boxe-3d\ \(1\).jpg);
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
-.triangle_1 {
-    width: 0;
-    height: 0;
-    position: relative;
-    border-left: 20vw solid transparent;
-    border-right: 20vw solid transparent;
-    border-bottom: 100vh solid red;
+.circle_1, 
+.circle_2 {
+    width: 25vw;
+    height: 20vw;
+    border-radius: 50%;
 }
 
-.triangle_2 {
-    width: 0;
-    height: 0;
-    border-left: 20vw solid transparent;
-    border-right: 20vw solid transparent;
-    border-top: 100vh solid blue;
+.custom-button {
+    --bs-btn-padding-y: 2vw;
+    --bs-btn-padding-x: 5vw;
 }
 
-
-/* Positionnement du bouton nouvelle partie en dehors du block*/
 .new_game {
     position: fixed;
     left: 35%;
@@ -41,56 +40,16 @@ body {
     left: 55%;
 }
 
-.total_nb {
-    position: absolute;
-    transform: translate(-45%, 300%);
-}
-
-.total {
-    position: absolute;
-    transform: translate(-45%, 400%);
-}
-
-.current {
-    position: absolute;
-    transform: translate(-45%, 1000%);
-    white-space: nowrap;
-}
-
-.current_nb {
-    position: absolute;
-    transform: translate(-45%, 1100%);
-}
-
-.player_1 {
-    position: absolute;
-    transform: translate(-45%, 1850%);
-    white-space: nowrap;
-}
-.total_nb2 {
-    position: absolute;
-    transform: translate(-50%, -300%);
-}
-
-.total2 {
-    position: absolute;
-    transform: translate(-50%, -400%);
-}
-
-.current2 {
-    position: absolute;
-    transform: translate(-50%, -1000%);
-    white-space: nowrap;
-}
-
-.current_nb2 {
-    position: absolute;
-    transform: translate(-50%, -1100%);
-}
-
+.total_nb,
+.total,
+.current,
+.current_nb,
+.player_1,
+.total_nb2,
+.total2,
+.current2,
+.current_nb2,
 .player_2 {
-    position: absolute;
-    transform: translate(-50%, -1850%);
     white-space: nowrap;
 }
 
@@ -99,21 +58,23 @@ body {
     height: 100px;
 }
 
+.player_1_button,
+.player_2_button,
+button {
+    color: azure;
+}
+
 .player_1_button {
     background-color: red;
-    color: azure;
 }
 
 .player_2_button {
     background-color: blue;
-    color: azure;
 }
-
 
 button {
     background-color: #341648;
     border: none;
-    color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -123,4 +84,52 @@ button {
     box-shadow: inset 25px 25px 25px rgba(0, 0, 0, 0.8);
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+}
+
+@media (max-width: 1200px) {
+    body {
+        height: 100%;
+    }
+
+    .circle_1,
+    .circle_2 {
+        width: 45vw;
+        height: 40vw;
+    }
+
+    .new_game {
+        left: 65%;
+    }
+
+    .roll_dice {
+        left: 15%;
+    }
+    
+    .hold {
+        left: 15%;
+    }
+}
+
+@media (max-width: 576px) {
+    .circle_1,
+    .circle_2 {
+        width: 60vw;
+        height: 55vw;
+    }
+
+    .new_game {
+        top: auto;
+        left: auto;
+        bottom: 1%;
+    }
+
+    .roll_dice {
+        left: 65%;
+        bottom: 52%;
+    }
+
+    .hold {
+        bottom: auto;
+        left: 5%;
+    }
 }

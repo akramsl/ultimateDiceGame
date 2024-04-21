@@ -1,5 +1,5 @@
 let activePlayer = 0; // Le joueur 1 commence
-let currentScore = document.querySelector('.current_nb' + (activePlayer === 0 ? ' ' : '2 ') + 'h2').textContent = 0;
+let currentScore = document.querySelector('.current_nb' + (activePlayer === 0 ? ' ' : '2 ')).textContent = 0;
 let totalScores = [0, 0];
 let gamePlaying = true;
 let dice;
@@ -10,11 +10,11 @@ function buttonLabelName() {
     let buttonLabel;
     
     if (activePlayer === 0) {
-        activePlayerName = document.querySelector('.player_1 h2').textContent;
+        activePlayerName = document.querySelector('.player_1').textContent;
         rollDiceButton.classList.add('player_1_button');
         rollDiceButton.classList.remove('player_2_button');
     } else {
-        activePlayerName = document.querySelector('.player_2 h2').textContent;
+        activePlayerName = document.querySelector('.player_2').textContent;
         rollDiceButton.classList.add('player_2_button');
         rollDiceButton.classList.remove('player_1_button');
     }
@@ -38,8 +38,8 @@ function changeNamePlayer() {
         player2Name = player2Name.substring(0, 5) // limite de 5 caratères
     }
 
-    document.querySelector('.player_1 h2').textContent = player1Name;
-    document.querySelector('.player_2 h2').textContent = player2Name;
+    document.querySelector('.player_1').textContent = player1Name;
+    document.querySelector('.player_2').textContent = player2Name;
 
 };
 
@@ -62,10 +62,10 @@ function rollDiceSettings() {
 
 
 function init() {
-    document.querySelector('.current_nb h2').textContent = "0";
-    document.querySelector('.current_nb2 h2').textContent = "0";
-    document.querySelector('.total_nb h2').textContent = "0";
-    document.querySelector('.total_nb2 h2').textContent = "0";
+    document.querySelector('.current_nb').textContent = "0";
+    document.querySelector('.current_nb2').textContent = "0";
+    document.querySelector('.total_nb').textContent = "0";
+    document.querySelector('.total_nb2').textContent = "0";
     totalScores = [0, 0];
     
     changeNamePlayer(); // Appele de la fonction pour afficher le nom des joueur 
@@ -85,7 +85,7 @@ document.querySelector('.new_game').addEventListener('click', () => {
 
 // Fonction qui permet de passer au prochain joueur
 function nextPlayer() {
-    document.querySelector('.current_nb' + (activePlayer === 0 ? ' ' : '2 ') + 'h2').textContent = 0
+    document.querySelector('.current_nb' + (activePlayer === 0 ? ' ' : '2 ')).textContent = 0
     currentScore = 0
     
     activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
@@ -101,7 +101,7 @@ function rollDice() {
         
         if (dice !== 1) {
             let addScore = currentScore += dice;
-            document.querySelector('.current_nb' + (activePlayer === 0 ? ' ' : '2 ') + 'h2').textContent = addScore;
+            document.querySelector('.current_nb' + (activePlayer === 0 ? ' ' : '2 ')).textContent = addScore;
         } else {
             nextPlayer();
         }
@@ -110,15 +110,15 @@ function rollDice() {
 
 function holdScore() {
     totalScores[activePlayer] += currentScore;
-    document.querySelector('.total_nb' + (activePlayer === 0 ? '' : '2') + ' h2').textContent = totalScores[activePlayer];
+    document.querySelector('.total_nb' + (activePlayer === 0 ? '' : '2') + '').textContent = totalScores[activePlayer];
     // Lorsque le joueur atteint 100 points
-    if (totalScores[activePlayer] >= 15) {
+    if (totalScores[activePlayer] >= 100) {
 
         let endGameSound = new Audio("Sound/bell_sound.flac");
         endGameSound.play();
         setTimeout(() => {
             // Rediriger vers la page winner.html
-            const winnerName = document.querySelector('.player_' + (activePlayer === 0 ? '1' : '2') + ' h2').textContent;
+            const winnerName = document.querySelector('.player_' + (activePlayer === 0 ? '1' : '2') + '').textContent;
             
             window.location.href = `winner.html?winner=${encodeURIComponent(winnerName)}`;
             
@@ -131,11 +131,11 @@ function holdScore() {
     }
     let activePlayerName;
     if (activePlayer === 0) {
-        activePlayerName = document.querySelector('.player_1 h2').textContent;
+        activePlayerName = document.querySelector('.player_1').textContent;
         rollDiceButton.classList.add('player_1_button');
         rollDiceButton.classList.remove('player_2_button');
     } else {
-        activePlayerName = document.querySelector('.player_2 h2').textContent;
+        activePlayerName = document.querySelector('.player_2').textContent;
         rollDiceButton.classList.add('player_2_button');
         rollDiceButton.classList.remove('player_1_button');
     }

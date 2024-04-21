@@ -8,7 +8,7 @@ let dice;
 function buttonLabelName() {
     let activePlayerName;
     let buttonLabel;
-    
+
     if (activePlayer === 0) {
         activePlayerName = document.querySelector('.player_1').textContent;
         rollDiceButton.classList.add('player_1_button');
@@ -20,8 +20,8 @@ function buttonLabelName() {
     }
     buttonLabel = `${activePlayerName} lance le dé`;
     rollDiceButton.textContent = buttonLabel;
-    
-} 
+
+}
 
 function changeNamePlayer() {
     let player1Name = prompt("Nom du joueur 1 (5 caractères maximum)");
@@ -30,7 +30,7 @@ function changeNamePlayer() {
     } else {
         player1Name = player1Name.substring(0, 5) // limite de 5 caratères
     }
-    
+
     let player2Name = prompt("Nom du joueur 2 (5 caractères maximum)");
     if (!player2Name) {
         player2Name = "Joueur 2";
@@ -48,7 +48,7 @@ let rollDiceButton = document.querySelector('.roll_dice');
 function rollDiceSettings() {
     rollDice();
     buttonLabelName();
-    
+
     let diceSound;
     if (dice == 1) {
         diceSound = new Audio("Sound/short-oww.mp3");
@@ -67,13 +67,13 @@ function init() {
     document.querySelector('.total_nb').textContent = "0";
     document.querySelector('.total_nb2').textContent = "0";
     totalScores = [0, 0];
-    
+
     changeNamePlayer(); // Appele de la fonction pour afficher le nom des joueur 
-    
+
     buttonLabelName();
     const readyToFight = new Audio("Sound/ready-fight.mp3");
     readyToFight.play();
-    
+
 }
 
 
@@ -87,7 +87,7 @@ document.querySelector('.new_game').addEventListener('click', () => {
 function nextPlayer() {
     document.querySelector('.current_nb' + (activePlayer === 0 ? ' ' : '2 ')).textContent = 0
     currentScore = 0
-    
+
     activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
 }
 
@@ -95,10 +95,10 @@ function nextPlayer() {
 function rollDice() {
     if (gamePlaying) {
         dice = Math.floor(Math.random() * 6) + 1; // Chiffre aleatoir entre 1 et 6
-        
+
         let diceImage = document.getElementById('dice-img');
-        diceImage.src = 'Dice/dice-' + dice + '.png';
-        
+        diceImage.src = 'images/dice-' + dice + '.png';
+
         if (dice !== 1) {
             let addScore = currentScore += dice;
             document.querySelector('.current_nb' + (activePlayer === 0 ? ' ' : '2 ')).textContent = addScore;
@@ -119,11 +119,11 @@ function holdScore() {
         setTimeout(() => {
             // Rediriger vers la page winner.html
             const winnerName = document.querySelector('.player_' + (activePlayer === 0 ? '1' : '2') + '').textContent;
-            
+
             window.location.href = `winner.html?winner=${encodeURIComponent(winnerName)}`;
-            
+
         }, 1500);
-        
+
         gamePlaying = false; // Modification de la variable pour arreter le jeu apres la victoire
 
     } else {
@@ -158,8 +158,8 @@ document.querySelector('.hold').addEventListener('click', () => {
 
 // evenement qui permet lors d'une entrée dans l'historique 
 // avec le bouton précédent de recommencer le jeu
-window.addEventListener('pageshow', function(event) {
-    if(event.persisted) {
+window.addEventListener('pageshow', function (event) {
+    if (event.persisted) {
         location.reload();
     }
 })

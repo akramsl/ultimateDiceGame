@@ -1,16 +1,16 @@
-/* Ajoutez votre CSS personnalisé ici */
 html {
     height: 100%;
 }
 
 body {
-    background-image: url(./Dice/ring-boxe-3d\ \(1\).jpg);
+    background-image: url(./images/ring-boxe-3d.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    font-family: "Lato", sans-serif;
 }
 
-.circle_1, 
+.circle_1,
 .circle_2 {
     width: 25vw;
     height: 20vw;
@@ -104,13 +104,14 @@ button {
     .roll_dice {
         left: 15%;
     }
-    
+
     .hold {
         left: 15%;
     }
 }
 
 @media (max-width: 576px) {
+
     .circle_1,
     .circle_2 {
         width: 60vw;
